@@ -24,6 +24,12 @@ gulp.task("webpack-dev-server", function(callback) {
 
 });
 
+gulp.task("dist",function(){
+    //find all files  and dest to dist
+    return gulp.src('app/**')
+        .pipe(gulpWebpack(require('./webpack.config.js') ))
+        .pipe(gulp.dest('dist/'));
+});
 
 gulp.task("build",function(){
     //find all files  and dest to dist
