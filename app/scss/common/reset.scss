@@ -16,17 +16,12 @@ html{
   font-size: 20px;
   font-size: calc(200vw/32);
 }
-
 body {
-  min-width: 320px;
-  max-width: 640px;
   height: 100%;
-  margin: 0 auto;
-  padding: 0;
   background-color: #FFFFFF;
 }
 
-@media all and (max-width:320px) {
+/*@media all and (max-width:320px) {
   html {
     font-size: 20px;
   }
@@ -45,7 +40,7 @@ body {
   body{
     font-size: 14px;
   }
-}
+}*/
 
 
 

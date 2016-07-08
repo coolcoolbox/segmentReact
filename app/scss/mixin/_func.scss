@@ -1,0 +1,9 @@
+@import "../vab";
+@mixin calueREMWdith($width){
+
+  width: $width/$base-width-ratio + rem;
+}
+@mixin calueREMHeight($height){
+  //7.5
+  height: $height/$base-width-ratio + rem;
+}

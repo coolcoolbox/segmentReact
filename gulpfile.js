@@ -47,6 +47,12 @@ gulp.task("cleanDist",function(){
         .pipe(clean());
 });
 
+gulp.task('fonts', function () {
+
+    return gulp.src('app/assets/fonts/*.*')
+            .pipe(gulp.dest('dist/fonts'));
+});
+
 
 
 

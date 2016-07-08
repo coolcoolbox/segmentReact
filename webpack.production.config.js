@@ -26,7 +26,8 @@ var config = {
         loaders: [ //some loaders
             {test: /\.jsx?$/,exclude: [node_modules_dir],loader: 'babel'},
             {test: /\.(jpg|png|gif)$/, loader: "url?limit=2048&name=[path][name].[hash:8].[ext]"},
-            {test: /\.scss/,loader: ExtractTextPlugin.extract('css!sass')}
+            {test: /\.scss/,loader: ExtractTextPlugin.extract('css!sass')},
+            { test: /\.(woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=50000&name=/fonts/[name].[ext]'}
         ]
     },
     plugins: [
