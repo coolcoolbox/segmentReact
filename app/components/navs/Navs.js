@@ -10,15 +10,20 @@ require('./navs.scss');
 
 export default class Navs extends React.Component{
 
+    clickHandel(index){
+        if(this.props.click){
+            this.props.click(null,index);
+        }
+    }
     render(){
-        let {actve,className,opened,data} = this.props;
-        return <ul className = {'m-navs ' + (className|| '') + (opened?' open':' false')}>
+        let {active,className,opened,data} = this.props;
+        return <ul className = {'m-navs ' + (className|| '') + (opened?' open':'')}>
                     {
                         data.map((item,key)=>{
-                            if(key == actve){
-                              return  <Nav text={ item.text} url={item.url} className={item.className + ' active'}  icon={item.icon} key={key}></Nav>
+                            if(key == active){
+                              return  <Nav text={ item.text} url={item.url} className={item.className + ' active'}  icon={item.icon} key={key} id={key} clickHandel={this.clickHandel.bind(this)}></Nav>
                             }else{
-                                return   <Nav text={ item.text} url={item.url} className={item.className}  icon={item.icon} key={key}></Nav>
+                                return   <Nav text={ item.text} url={item.url} className={item.className}  icon={item.icon} key={key} id={key} clickHandel={this.clickHandel.bind(this)}></Nav>
                             }
                         })
                         }

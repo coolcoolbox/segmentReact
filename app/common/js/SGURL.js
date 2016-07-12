@@ -20,7 +20,10 @@ let url = {
 
     },
     articleList:{
-        url:'getArtislt'
+        url:'getArtislt.json'
+    },
+    articleHot:{
+        url:'getArtisltHot.json'
     }
 
 };

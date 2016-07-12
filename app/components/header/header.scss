@@ -9,6 +9,9 @@
     padding: 0 15px;
     line-height: 1rem;
     color: $base-color-green-deep;
+    &.active{
+      color: $base-color-green;
+    }
   }
   .m-navs{
     display: none;

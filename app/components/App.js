@@ -1,13 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router';
+import Header from "./header/Header";
+import SGDdata from "../common/js/SGDdata";
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 require("../scss/common/reset.scss");
 
 export default class App extends React.Component {
 
+    constructor(props){
+        super(props);
+        let navs = SGDdata.getNav();
+        this.state = {
+            navs:navs
+        }
+    }
+
     render() {
         return <div className="App">
+            <Header active={0} navs={this.state.navs}/>
             <ReactCSSTransitionGroup
                 component="div"
                 transitionName="pageTransition"

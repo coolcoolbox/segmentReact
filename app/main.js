@@ -11,6 +11,7 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import { Router, Route,IndexRoute,hashHistory } from 'react-router';
 import Index from './view/index/Index';
+import Answer from './view/Answer/Answer';
 import App from './components/App';
 
 require('./scss/plugins/fontAwesome/font-awesome.scss');
@@ -18,7 +19,8 @@ let routes = (
     <Router history={hashHistory}>
         <Route path="/" component={App}  >
             <IndexRoute component={Index}/>
-            <Route path="/index"  component={Index}/>
+            <Route path="/Index"  component={Index}/>
+            <Route path="/Answer"  component={Answer}/>
         </Route>
     </Router>
 );

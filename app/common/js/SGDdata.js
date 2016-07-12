@@ -6,7 +6,10 @@ import SGUrl from './SGURL';
 import SGHTTP from './SGHTTP.js';
 
 let reqs = {
-
+    request(obj){
+        let params = SGUrl.getParams(obj.key);
+        return SGHTTP.request(params);
+    },
     login(data){
         if(!data.userName){
 
@@ -21,6 +24,40 @@ let reqs = {
     getAriticle(data){
         let params = SGUrl.getParams('articleList');
         return SGHTTP.request(params);
+    },
+    getNav(){
+        let navs =
+            [
+            {
+                'text':'首页',
+                'url':'/',
+                className:'index',
+                icon:'icon-data'
+            },
+            {
+                'text':'问答',
+                'url':'/Answer',
+                className:'answer',
+                icon:'icon-data'
+            }
+        ];
+        return navs;
+    },
+    getIndexTabs(){
+        let tabs =
+            [
+                {
+                    'text':'最新的',
+                    'key':'articleList',
+                    className:'tab tab1'
+                },
+                {
+                    'text':'热门的',
+                    'key':'articleHot',
+                    className:'tab tab1'
+                }
+            ];
+        return tabs;
     }
 
 

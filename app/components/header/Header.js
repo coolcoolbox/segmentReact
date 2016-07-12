@@ -9,33 +9,24 @@ export default class Header extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            opened:false
+            opened:false,
+            active:0
         }
     }
-    toggleNavs(){
+    toggleNavs(e,index){
+        if(index){
+            this.setState({active:index})
+        }
         this.setState({opened: !this.state.opened})
     }
     componentDidMount (){
     }
     render() {
 
-        let data = [
-            {
-                'text':'1',
-                'url':'/Index',
-                className:'index',
-                icon:'icon-data'
-            },
-            {
-                'text':'2',
-                'url':'/purchase',
-                className:'purchase',
-                icon:'icon-data'
-            }
-        ];
+        let data =  this.props.navs;
         return <div id="header">
-            <i className='toggle fa fa-list-ul' onClickCapture ={this.toggleNavs.bind(this)}></i><Logo />
-            <Navs active={this.props.active} data={data} opened={this.state.opened}></Navs>
+            <i className={(this.state.opened ? 'active ':'') + 'toggle fa fa-list-ul'} onClick ={this.toggleNavs.bind(this)}></i><Logo />
+            <Navs active={this.state.active} data={data} opened={this.state.opened} click={this.toggleNavs.bind(this)}></Navs>
         </div>
     }
 }
