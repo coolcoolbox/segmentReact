@@ -31,7 +31,6 @@ export default  class TabView extends React.Component{
     render(){
 
         let tabs = this.props.tabs;
-        console.log(tabs)
         return <div>
             <TTab tabs={tabs } tabChange={this.tabHandel.bind(this)} active={this.state.active}/>
             <TView >

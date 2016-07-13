@@ -15,7 +15,9 @@ export default class App extends React.Component {
             navs:navs
         }
     }
-
+    componentWillEnter(){
+        console.log('index');
+    }
     render() {
         return <div className="App">
             <Header navs={this.state.navs}/>

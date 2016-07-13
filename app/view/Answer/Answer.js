@@ -10,10 +10,17 @@ export default class Index extends React.Component {
         super(props);
 
     }
-    componentWillMount(){
 
+    componentDidMount() {
+        this.props.router&&this.props.router.setRouteLeaveHook(
+            this.props.route,
+            this.routerWillLeave
+        )
     }
 
+    routerWillLeave(nextLocation) {
+        console.log('leve',nextLocation);
+    }
 
     render() {
         return <div id="anwser">

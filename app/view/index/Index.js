@@ -16,6 +16,12 @@ export default class Index extends React.Component {
             tabs:tabs
         }
     }
+
+    getChildContext() {
+        // 传递数组
+        return { data: this.state. data};
+    }
+
     componentWillMount(){
 
         //获取 tabs的数据
@@ -49,3 +55,6 @@ export default class Index extends React.Component {
         </div>
     }
 }
+Index.childContextTypes = {
+    data: React.PropTypes.array
+};
