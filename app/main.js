@@ -15,6 +15,7 @@ import Answer from './view/Answer/Answer';
 import App from './components/App';
 
 require('./scss/plugins/fontAwesome/font-awesome.scss');
+require('./scss/common/animation.scss');
 let routes = (
     <Router history={hashHistory}>
         <Route path="/" component={App}  >

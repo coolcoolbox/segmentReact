@@ -9,14 +9,11 @@ export default class Header extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            opened:false,
-            active:0
+            opened:false
         }
     }
-    toggleNavs(e,index){
-        if(index){
-            this.setState({active:index})
-        }
+    toggleNavs(){
+
         this.setState({opened: !this.state.opened})
     }
     componentDidMount (){
@@ -26,7 +23,7 @@ export default class Header extends React.Component {
         let data =  this.props.navs;
         return <div id="header">
             <i className={(this.state.opened ? 'active ':'') + 'toggle fa fa-list-ul'} onClick ={this.toggleNavs.bind(this)}></i><Logo />
-            <Navs active={this.state.active} data={data} opened={this.state.opened} click={this.toggleNavs.bind(this)}></Navs>
+            <Navs data={data} opened={this.state.opened} click={this.toggleNavs.bind(this)}></Navs>
         </div>
     }
 }

@@ -23,7 +23,7 @@ export default class TTab extends React.Component{
     render(){
         let activeIndex = this.props.active,
             className = this.props.className?this.props.className:'';
-        return <ul>
+        return <ul className="tabView__tabs">
         {
             !this.props.tabs?'':(
                 this.props.tabs.map((item,key)=>{
@@ -32,8 +32,9 @@ export default class TTab extends React.Component{
                     }else{
                         className = this.props.className?this.props.className:'';
                     }
+                    className += ' tabView__tabs_item';
                     return <li key={key} onClick={this.tabHandel.bind(this)} data-index={key} className = {className}>
-                        <a className={item.className} >{item.name}</a>
+                        <a className={(item.className?item.className:'') + ' tabView__tabs_item_link'} >{item.text}</a>
                     </li>
                 })
             )

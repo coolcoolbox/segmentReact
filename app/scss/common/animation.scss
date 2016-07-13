@@ -1,0 +1,21 @@
+.fadeTransition-enter{
+  position: relative;
+  opacity: 0.01;
+  z-index: 1065;
+}
+
+
+.fadeTransition-enter.fadeTransition-enter-active {
+  position: relative;
+  z-index: 1065;
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.fadeTransition-leave {
+  display: none;
+}
+
+.fadeTransition-leave.fadeTransition-leave-active {
+  display: none;
+}

@@ -30,7 +30,7 @@ let reqs = {
             [
             {
                 'text':'首页',
-                'url':'/',
+                'url':'/Index',
                 className:'index',
                 icon:'icon-data'
             },
@@ -54,7 +54,12 @@ let reqs = {
                 {
                     'text':'热门的',
                     'key':'articleHot',
-                    className:'tab tab1'
+                    className:'tab tab2'
+                },
+                {
+                    'text':'未回答的',
+                    'key':'unAnwserd',
+                    className:'tab tab3'
                 }
             ];
         return tabs;

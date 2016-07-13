@@ -1,0 +1,22 @@
+.tabView__tabs{
+  display: block;
+  overflow: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  font-size: 14px;
+  .tabView__tabs_item{
+    float: left;
+    display: block;
+    &.active{
+      .tabView__tabs_item_link{
+        background: #009a61;
+      }
+    }
+  }
+  .tabView__tabs_item_link{
+    padding: 5px 10px;
+    background: #004e31;
+    color: #fff;
+  }
+}

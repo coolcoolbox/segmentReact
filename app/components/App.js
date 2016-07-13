@@ -18,10 +18,10 @@ export default class App extends React.Component {
 
     render() {
         return <div className="App">
-            <Header active={0} navs={this.state.navs}/>
+            <Header navs={this.state.navs}/>
             <ReactCSSTransitionGroup
                 component="div"
-                transitionName="pageTransition"
+                transitionName="fadeTransition"
                 transitionEnterTimeout={500}
                 transitionLeaveTimeout={500}
             >

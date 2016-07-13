@@ -39,6 +39,7 @@ export default class Index extends React.Component {
         });
     }
     render() {
+        //改变 组件
         let EL =   this.state.data?this.state.data.map((item,key)=>{
             return <Article {...item} key={key}/>
         }):null;

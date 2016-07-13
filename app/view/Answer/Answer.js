@@ -17,7 +17,7 @@ export default class Index extends React.Component {
 
     render() {
         return <div id="anwser">
-            anwser
+            Anwser Page
         </div>
     }
 }

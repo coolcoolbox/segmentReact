@@ -16,11 +16,12 @@ export default class Navs extends React.Component{
         }
     }
     render(){
-        let {active,className,opened,data} = this.props;
+        let {className,opened,data} = this.props,
+            url = location.hash;
         return <ul className = {'m-navs ' + (className|| '') + (opened?' open':'')}>
                     {
                         data.map((item,key)=>{
-                            if(key == active){
+                            if(url.indexOf(item.url)!== -1){
                               return  <Nav text={ item.text} url={item.url} className={item.className + ' active'}  icon={item.icon} key={key} id={key} clickHandel={this.clickHandel.bind(this)}></Nav>
                             }else{
                                 return   <Nav text={ item.text} url={item.url} className={item.className}  icon={item.icon} key={key} id={key} clickHandel={this.clickHandel.bind(this)}></Nav>
@@ -33,6 +34,5 @@ export default class Navs extends React.Component{
 Navs.props = {
     data:React.PropTypes.array.isRequired,
     className:React.PropTypes.string,
-    active:React.PropTypes.number,
     opened:React.PropTypes.bool
 };
